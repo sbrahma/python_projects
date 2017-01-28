@@ -5,6 +5,7 @@ Date: 28/1/2017
 Problem: The user enters various files from different directories and the program zips them up into a zip file. 
 Optional: Apply actual compression to the files. Start with Huffman Algorithm. import os, datetime
 """
+import os, datetime
 source_dir = ['/Users/Sam/python'] # please change it accordingly
 upload_time = datetime.datetime.now().strftime("%Y-%m-%d")
 
