@@ -6,12 +6,15 @@ Problem: The user enters various files from different directories and the progra
 Optional: Apply actual compression to the files. Start with Huffman Algorithm. import os, datetime
 """
 import os, datetime
-source_dir = ['/Users/Sam/python'] # please change it accordingly
+source_dir = '/Users/Sam/python' # please change it accordingly
 upload_time = datetime.datetime.now().strftime("%Y-%m-%d")
+target_dir = '/Users/Sam/python/backup'
+if not os.path.exists(target_dir):
+	os.makedirs(target_dir)
 
-folder = os.path.join('/Users/Sam/python/backup', upload_time ) # please change it accordingly
+folder = os.path.join(target_dir, upload_time ) # please change it accordingly
 filename = folder + '.zip'
-zip_command = "zip -qr '%s' %s"	%(folder, ' '.join(source_dir))
+zip_command = "zip -qr '%s' %s"	%(folder,source_dir)
 
 # run zip command
 if os.system(zip_command) == 0:
